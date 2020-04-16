@@ -80,7 +80,6 @@ DATABASES = {
         'NAME': 'DoubleHao',
         'USER': 'root',
         'PASSWORD': '12345678',
-        # 'HOST': '203.195.217.147',
         'HOST': 'localhost',
         'PORT': '3306',
     }
