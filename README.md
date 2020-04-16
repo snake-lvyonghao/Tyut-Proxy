@@ -38,7 +38,7 @@ Django用于做后端开发，用于封装核心API为日后开发提供接口
 
 你需要在Scrapy项目下也就是eduScrapy下使用Scrapyd来启动爬虫项目，同时在最外面的Django项目启动Django这样你才能run起来
 
-最后说一句我使用的是Mysql数据库，如果你体验其它数据库，请更改Django项目的settings.py文件
+最后说一句我使用的是Mysql数据库，数据库名就叫Doublehao，如果你体验其它数据库，请更改Django项目的settings.py文件
 
 ## 最后说两句
 
