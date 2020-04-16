@@ -42,11 +42,11 @@ Django用于做后端开发，用于封装核心API为日后开发提供接口
 
 ## 最后说两句
 
-这个项目是我搞了很久才写出来的，希望能够对太原理工大学的学子们或者其他计算机工者给予启发，还要在这里感谢我的项目合作伙伴 *胡文浩* 同志给予我的巨大支持，以及感谢理工同学在github上https://github.com/bla58351/tyut-novpn/blob/master/README.md这个项目给予在VPN上的帮助，如果你对该项目有什么问题，或者不懂的地方请联系我，或者你想对该项目做亿点点支持的话请扫二维码 ：
+这个项目是我搞了很久才写出来的，希望能够对太原理工大学的学子们或者其他计算机工者给予启发，还要在这里感谢我的项目合作伙伴 *胡文浩* 同志给予我的巨大支持，以及感谢理工同学在[https://github.com/bla58351/tyut-novpn/blob/master/README.md](VPN)github上这个项目给予在VPN上的帮助，如果你对该项目有什么问题，或者不懂的地方请联系我，或者你想对该项目做亿点点支持的话请扫二维码 ：
 
 [![JEMqmT.th.jpg](https://s1.ax1x.com/2020/04/17/JEMqmT.th.jpg)](https://imgchr.com/i/JEMqmT)		[![JEMjk4.th.jpg](https://s1.ax1x.com/2020/04/17/JEMjk4.th.jpg)](https://imgchr.com/i/JEMjk4)
 
-如果你想了解项目的细节请关注我的博客，不定期更新内容：[https://snake-lvyonghao.github.io/]()
+如果你想了解项目的细节请关注我的博客，不定期更新内容：[https://snake-lvyonghao.github.io/](大道至简)
 
 
 
