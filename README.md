@@ -9,8 +9,6 @@ Scrapy一款强大的爬虫框架，用于爬取个人所有数据
 
 Django用于做后端开发，用于封装核心API为日后开发提供接口
 
----
-
 ## 项目结构
 
 整体项目结构是Djangp包含Scrapy的样式，也就是说外层使用Django框架，在Django框架下创建了一个Scrapy框架。如果你接触过Django那你应该应该知道DoubleHao，DoubleHaoapp，templates是属于原生Django的。我把Scrapy放在了bots中，Scrapy项目名字就叫做eduScrapy。
