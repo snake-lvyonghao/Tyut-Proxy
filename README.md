@@ -1,3 +1,4 @@
+![](https://img.shields.io/badge/language-Python-orange.svg) ![](https://img.shields.io/badge/license-MIT-000000.svg) ![](https://img.shields.io/badge/version-1.0.4-yellow) [![GitHub stars](https://img.shields.io/github/stars/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/stargazers) [![GitHub issues](https://img.shields.io/github/issues/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/issues) 
 # Tyut教务处信息代理 + 聚合
 
 本项目是为了方便校园你我他，免去大家查GPA，看课表，看考试成绩之苦。
