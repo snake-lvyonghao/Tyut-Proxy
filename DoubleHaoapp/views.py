@@ -6,6 +6,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from DoubleHaoapp.models import Student, PersonalInformation, Kcb, Kccj
+from DoubleHaoapp.tool import get_course
 
 
 def index(request):
@@ -58,8 +59,7 @@ def Scrapy_Kcb(request):
         data = {'project': 'eduScrapy', 'spider': 'kcb', 'username': username, 'password': password}
         requests.post(url=url, data=data)
         kcb = Kcb.objects.get(Kid__Sid=username)
-        print(kcb)
-        result = {"state": '200', "message": kcb.__toString__()}
+        result = {"state": '200', "message": get_course(kcb.KcbMessage)}
         result = json.dumps(result, ensure_ascii=False)
         return HttpResponse(result, content_type="application/json,charset=utf-8")
     except:
