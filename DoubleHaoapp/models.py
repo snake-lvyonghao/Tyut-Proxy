@@ -1,7 +1,15 @@
+import datetime
+from datetime import timedelta
+
+import jwt
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
 # Create your models here.
+from DoubleHao import settings
+
+
 class Student(models.Model):
     Sid = models.IntegerField(unique=True)
     Spassword = models.IntegerField()
@@ -17,6 +25,19 @@ class Student(models.Model):
             Spassword=Spassword,
         )
         return stu
+
+    # 返回token
+    @property
+    def token(self):
+        return self._generate_jwt_token()
+
+    def _generate_jwt_token(self):
+        token = jwt.encode({
+            "username":self.Sid,
+        }, settings.SECRET_KEY, algorithm='HS256')
+
+        return token.decode('utf-8')
+
 
 class PersonalInformation(models.Model):
     ClassId = models.ForeignKey("Student", to_field="Sid", on_delete=models.CASCADE) # 学号
