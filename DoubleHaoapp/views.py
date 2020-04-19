@@ -14,7 +14,6 @@ from DoubleHaoapp.tool import get_course
 def index(request):
     return render(request, 'index.html')
 
-
 # 注册
 def Scrapy_register(request):
     try:
@@ -48,9 +47,17 @@ def Scrapy_update(request):
     try:
         # token中取得usernam
         token = jwt.decode(request["token"],settings.SECRET_KEY,algorithm='HS256')
-        password = Student.objects.get(Sid=username)
+        username = token.get("username")
+        updata_stu = Student.objects.get(Sid=username)
+        updata_stu.Spassword = request["newpassword"]
+        result = {"state": '200', "message": "更新密码成功"}
+        result = json.dumps(result, ensure_ascii=False)
+        return HttpResponse(result, content_type="application/json,charset=utf-8")
     except:
-        pass
+        result = {"state": '400', "message": "更新密码失败"}
+        result = json.dumps(result, ensure_ascii=False)
+        return HttpResponse(result, content_type="application/json,charset=utf-8")
+
 
 # Session登陆
 # def Scrapy_login(Request):
@@ -179,4 +186,5 @@ def Scrapy_Kccj(request):
 
 # 数据库更新
 def update_datebase(request):
+    # 目前打算采用定时更新，免去服务器压力
     pass
