@@ -1,4 +1,16 @@
-![](https://img.shields.io/badge/language-Python-orange.svg) ![](https://img.shields.io/badge/license-MIT-000000.svg) ![](https://img.shields.io/badge/version-1.0.4-yellow) [![GitHub stars](https://img.shields.io/github/stars/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/stargazers) [![GitHub issues](https://img.shields.io/github/issues/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/issues) 
+![](https://img.shields.io/badge/language-Python-orange.svg) ![](https://img.shields.io/badge/license-MIT-000000.svg) ![](https://img.shields.io/badge/version-1.1.0-yellow) [![GitHub stars](https://img.shields.io/github/stars/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/stargazers) [![GitHub issues](https://img.shields.io/github/issues/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/issues) 
+## 版本1.1.0更新 
+这次是比较大的更新，更新主要内容有
++ 移除了Django中业务的Session功能。
++ 替换Session，使用token来加密传输数据。
++ 修复数据库更新bug，目前采用删除原数据在插入新数据的方式，性能上并不理想后续还会再升级。
++ 增添修改密码接口。
+
+本次更新使用了token技术加密传输数据，因此你需要添加新的包到你的环境当中
++ PyJWT                   1.7.1   
+
+当前存在的问题:当前用户每次登陆都需要重新爬取数据，数据返回的小于爬虫运行的时间，没有实现同步，经常需要等一段时间再刷新才能拿到更新的数据。
+未来改进方向:用户查询数据接口只走数据库，不再启动爬虫，设置定时爬虫，在每天特定时段对整个数据库进行更新。
 # Tyut教务处信息代理 + 聚合
 
 本项目是为了方便校园你我他，免去大家查GPA，看课表，看考试成绩之苦。
