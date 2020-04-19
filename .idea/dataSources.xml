@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="default" uuid="155af81a-9f4d-42ae-833a-d7c5f731da60">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/bots/eduScrapy/dbs/default.db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="eduScrapy" uuid="484f51ec-8133-4e38-b102-d2efc7d2f426">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/bots/eduScrapy/dbs/eduScrapy.db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="7f817131-984d-4399-b9a4-c0384885d4f5">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/DoubleHao/settings.py</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/DoubleHao</jdbc-url>
+    </data-source>
+  </component>
+</project>

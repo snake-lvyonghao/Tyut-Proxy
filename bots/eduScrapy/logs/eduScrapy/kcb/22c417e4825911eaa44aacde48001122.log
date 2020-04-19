@@ -1,0 +1,170 @@
+2020-04-20 00:16:39 [scrapy.utils.log] INFO: Scrapy 2.0.1 started (bot: eduScrapy)
+2020-04-20 00:16:39 [scrapy.utils.log] INFO: Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 20.3.0, Python 3.7.3 (default, Mar 27 2019, 09:23:15) - [Clang 10.0.1 (clang-1001.0.46.3)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.9, Platform Darwin-19.0.0-x86_64-i386-64bit
+2020-04-20 00:16:39 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2020-04-20 00:16:39 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'eduScrapy',
+ 'LOG_FILE': 'logs/eduScrapy/kcb/22c417e4825911eaa44aacde48001122.log',
+ 'NEWSPIDER_MODULE': 'eduScrapy.spiders',
+ 'SPIDER_MODULES': ['eduScrapy.spiders']}
+2020-04-20 00:16:39 [scrapy.extensions.telnet] INFO: Telnet Password: 8a5c9f8003899897
+2020-04-20 00:16:39 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-20 00:16:39 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-20 00:16:39 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-20 00:16:39 [scrapy.middleware] INFO: Enabled item pipelines:
+['eduScrapy.pipelines.EduscrapyPipeline']
+2020-04-20 00:16:39 [scrapy.core.engine] INFO: Spider opened
+2020-04-20 00:16:39 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-20 00:16:39 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-20 00:16:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://202.207.247.49> (referer: None)
+2020-04-20 00:16:39 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://202.207.247.49/Login/CheckLogin> (referer: http://202.207.247.49/Login/Index)
+2020-04-20 00:16:39 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://202.207.247.49/Error/Error404?aspxerrorpath=/Home/Default> from <POST http://202.207.247.49/Home/Default>
+2020-04-20 00:16:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://202.207.247.49/Error/Error404?aspxerrorpath=/Home/Default> (referer: http://202.207.247.49/Login/Index)
+2020-04-20 00:16:40 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://202.207.247.49/Tresources/A1Xskb/GetXsKb> (referer: http://202.207.247.49/Tresources/A1Xskb/XsKbIndex)
+2020-04-20 00:16:40 [asyncio] DEBUG: Using selector: KqueueSelector
+2020-04-20 00:16:40 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tresources/A1Xskb/GetXsKb>
+{'KcbMessage': '{"rows": [{"Zxjxjhh": "2019-2020-2-1", "Kch": "00008647", '
+               '"Kxh": "02", "Kcm": "Linux与Python编程R", "Xf": "2.5", "Kcsx": '
+               '"专业选修", "Kslx": "考试", "Skzc": "111111000000000000000000", '
+               '"Zcsm": "1-6周", "Skxq": 1, "Skjc": 7.0, "Cxjc": 2.0, "Dd": "明向 '
+               '行勉楼 C210", "Jsm": "张辉", "Zcsm1": "1-6周", "Xqm": "明向校区", '
+               '"Jxlm": "行勉楼", "Jasm": "C210", "Jc": "7-8"}, {"Zxjxjhh": '
+               '"2019-2020-2-1", "Kch": "00008493", "Kxh": "02", "Kcm": '
+               '"软件需求工程R", "Xf": "2", "Kcsx": "专业选修", "Kslx": "考试", "Skzc": '
+               '"111111000000000000000000", "Zcsm": "1-6周", "Skxq": 1, "Skjc": '
+               '3.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C213", "Jsm": "王园宇", "Zcsm1": '
+               '"1-6周", "Xqm": "明向校区", "Jxlm": "行勉楼", "Jasm": "C213", "Jc": '
+               '"3-4"}, {"Zxjxjhh": "2019-2020-2-1", "Kch": "00008646", "Kxh": '
+               '"01", "Kcm": "智能信息处理R", "Xf": "2.5", "Kcsx": "专业选修", "Kslx": '
+               '"考试", "Skzc": "111111000000000000000000", "Zcsm": "1-6周", '
+               '"Skxq": 1, "Skjc": 1.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C212", '
+               '"Jsm": "张玲", "Zcsm1": "1-6周", "Xqm": "明向校区", "Jxlm": "行勉楼", '
+               '"Jasm": "C212", "Jc": "1-2"}, {"Zxjxjhh": "2019-2020-2-1", '
+               '"Kch": "00008645", "Kxh": "01", "Kcm": "人工智能基础R", "Xf": "3", '
+               '"Kcsx": "专业选修", "Kslx": "考试", "Skzc": '
+               '"000000011111110000000000", "Zcsm": "8-14周", "Skxq": 1, '
+               '"Skjc": 1.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C210", "Jsm": "边婧", '
+               '"Zcsm1": "8-14周", "Xqm": "明向校区", "Jxlm": "行勉楼", "Jasm": '
+               '"C210", "Jc": "1-2"}, {"Zxjxjhh": "2019-2020-2-1", "Kch": '
+               '"00007012", "Kxh": "02", "Kcm": "形势与政策(六)", "Xf": "0", "Kcsx": '
+               '"必修", "Kslx": "考试", "Skzc": "111110000000000000000000", '
+               '"Zcsm": "1-5周", "Skxq": 2, "Skjc": 5.0, "Cxjc": 2.0, "Dd": "明向 '
+               '行远楼 A104", "Jsm": "刘振霞", "Zcsm1": "1-5周", "Xqm": "明向校区", '
+               '"Jxlm": "行远楼", "Jasm": "A104", "Jc": "5-6"}, {"Zxjxjhh": '
+               '"2019-2020-2-1", "Kch": "00008648", "Kxh": "05", "Kcm": '
+               '"企业级框架技术R", "Xf": "3", "Kcsx": "专业选修", "Kslx": "考试", "Skzc": '
+               '"111110000000000000000000", "Zcsm": "1-5周", "Skxq": 2, "Skjc": '
+               '3.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C216", "Jsm": "孙静宇", "Zcsm1": '
+               '"1-5周", "Xqm": "明向校区", "Jxlm": "行勉楼", "Jasm": "C216", "Jc": '
+               '"3-4"}, {"Zxjxjhh": "2019-2020-2-1", "Kch": "00008648", "Kxh": '
+               '"05", "Kcm": "企业级框架技术R", "Xf": "3", "Kcsx": "专业选修", "Kslx": '
+               '"考试", "Skzc": "000000111110000000000000", "Zcsm": "7-11周", '
+               '"Skxq": 2, "Skjc": 3.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C216", '
+               '"Jsm": "高保禄", "Zcsm1": "7-11周", "Xqm": "明向校区", "Jxlm": "行勉楼", '
+               '"Jasm": "C216", "Jc": "3-4"}, {"Zxjxjhh": "2019-2020-2-1", '
+               '"Kch": "00008493", "Kxh": "02", "Kcm": "软件需求工程R", "Xf": "2", '
+               '"Kcsx": "专业选修", "Kslx": "考试", "Skzc": '
+               '"111111000000000000000000", "Zcsm": "1-6周", "Skxq": 3, "Skjc": '
+               '7.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 A405", "Jsm": "王园宇", "Zcsm1": '
+               '"1-6周", "Xqm": "明向校区", "Jxlm": "行勉楼", "Jasm": "A405", "Jc": '
+               '"7-8"}, {"Zxjxjhh": "2019-2020-2-1", "Kch": "00008647", "Kxh": '
+               '"02", "Kcm": "Linux与Python编程R", "Xf": "2.5", "Kcsx": "专业选修", '
+               '"Kslx": "考试", "Skzc": "111111000000000000000000", "Zcsm": '
+               '"1-6周", "Skxq": 3, "Skjc": 5.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 '
+               'C212", "Jsm": "张辉", "Zcsm1": "1-6周", "Xqm": "明向校区", "Jxlm": '
+               '"行勉楼", "Jasm": "C212", "Jc": "5-6"}, {"Zxjxjhh": '
+               '"2019-2020-2-1", "Kch": "00008646", "Kxh": "01", "Kcm": '
+               '"智能信息处理R", "Xf": "2.5", "Kcsx": "专业选修", "Kslx": "考试", "Skzc": '
+               '"111111000000000000000000", "Zcsm": "1-6周", "Skxq": 3, "Skjc": '
+               '3.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C215", "Jsm": "张玲", "Zcsm1": '
+               '"1-6周", "Xqm": "明向校区", "Jxlm": "行勉楼", "Jasm": "C215", "Jc": '
+               '"3-4"}, {"Zxjxjhh": "2019-2020-2-1", "Kch": "00008645", "Kxh": '
+               '"01", "Kcm": "人工智能基础R", "Xf": "3", "Kcsx": "专业选修", "Kslx": '
+               '"考试", "Skzc": "000000011111110000000000", "Zcsm": "8-14周", '
+               '"Skxq": 3, "Skjc": 3.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C212", '
+               '"Jsm": "边婧", "Zcsm1": "8-14周", "Xqm": "明向校区", "Jxlm": "行勉楼", '
+               '"Jasm": "C212", "Jc": "3-4"}, {"Zxjxjhh": "2019-2020-2-1", '
+               '"Kch": "00008646", "Kxh": "01", "Kcm": "智能信息处理R", "Xf": "2.5", '
+               '"Kcsx": "专业选修", "Kslx": "考试", "Skzc": '
+               '"111111000000000000000000", "Zcsm": "1-6周", "Skxq": 4, "Skjc": '
+               '7.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C210", "Jsm": "张玲", "Zcsm1": '
+               '"1-6周", "Xqm": "明向校区", "Jxlm": "行勉楼", "Jasm": "C210", "Jc": '
+               '"7-8"}, {"Zxjxjhh": "2019-2020-2-1", "Kch": "00008645", "Kxh": '
+               '"01", "Kcm": "人工智能基础R", "Xf": "3", "Kcsx": "专业选修", "Kslx": '
+               '"考试", "Skzc": "000000011111110000000000", "Zcsm": "8-14周", '
+               '"Skxq": 4, "Skjc": 3.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C310", '
+               '"Jsm": "边婧", "Zcsm1": "8-14周", "Xqm": "明向校区", "Jxlm": "行勉楼", '
+               '"Jasm": "C310", "Jc": "3-4"}, {"Zxjxjhh": "2019-2020-2-1", '
+               '"Kch": "00008648", "Kxh": "05", "Kcm": "企业级框架技术R", "Xf": "3", '
+               '"Kcsx": "专业选修", "Kslx": "考试", "Skzc": '
+               '"111110000000000000000000", "Zcsm": "1-5周", "Skxq": 4, "Skjc": '
+               '1.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C216", "Jsm": "孙静宇", "Zcsm1": '
+               '"1-5周", "Xqm": "明向校区", "Jxlm": "行勉楼", "Jasm": "C216", "Jc": '
+               '"1-2"}, {"Zxjxjhh": "2019-2020-2-1", "Kch": "00008648", "Kxh": '
+               '"05", "Kcm": "企业级框架技术R", "Xf": "3", "Kcsx": "专业选修", "Kslx": '
+               '"考试", "Skzc": "000000111110000000000000", "Zcsm": "7-11周", '
+               '"Skxq": 4, "Skjc": 1.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C216", '
+               '"Jsm": "高保禄", "Zcsm1": "7-11周", "Xqm": "明向校区", "Jxlm": "行勉楼", '
+               '"Jasm": "C216", "Jc": "1-2"}, {"Zxjxjhh": "2019-2020-2-1", '
+               '"Kch": "00008647", "Kxh": "02", "Kcm": "Linux与Python编程R", '
+               '"Xf": "2.5", "Kcsx": "专业选修", "Kslx": "考试", "Skzc": '
+               '"111111000000000000000000", "Zcsm": "1-6周", "Skxq": 5, "Skjc": '
+               '7.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C212", "Jsm": "张辉", "Zcsm1": '
+               '"1-6周", "Xqm": "明向校区", "Jxlm": "行勉楼", "Jasm": "C212", "Jc": '
+               '"7-8"}, {"Zxjxjhh": "2019-2020-2-1", "Kch": "00008481", "Kxh": '
+               '"02", "Kcm": "文献检索与利用X", "Xf": "2", "Kcsx": "学科选修", "Kslx": '
+               '"考试", "Skzc": "111111111110000000000000", "Zcsm": "1-11周", '
+               '"Skxq": 5, "Skjc": 1.0, "Cxjc": 2.0, "Dd": "明向 行勉楼 C315", '
+               '"Jsm": "单媛媛", "Zcsm1": "1-11周", "Xqm": "明向校区", "Jxlm": "行勉楼", '
+               '"Jasm": "C315", "Jc": "1-2"}, {"Zxjxjhh": "2019-2020-2-1", '
+               '"Kch": "SJ001685", "Kxh": "05", "Kcm": "应用软件方向综合课程设计", "Xf": '
+               '"2", "Kcsx": "实践环节", "Kslx": "考试", "Skzc": '
+               '"000000000000000011000000", "Zcsm": "17-18周", "Skxq": 0, '
+               '"Skjc": 0, "Cxjc": 0, "Dd": 0, "Jsm": "武淑红", "Zcsm1": '
+               '"17-18周", "Xqm": 0, "Jxlm": 0, "Jasm": 0, "Jc": "-"}]}',
+ 'Kid': <Student: Student object (8)>}
+2020-04-20 00:16:40 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-04-20 00:16:40 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2858,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/request_method_count/POST': 3,
+ 'downloader/response_bytes': 7116,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 4,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 1.118299,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 19, 16, 16, 40, 308376),
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 7,
+ 'log_count/INFO': 10,
+ 'memusage/max': 66969600,
+ 'memusage/startup': 66969600,
+ 'request_depth_max': 3,
+ 'response_received_count': 4,
+ 'scheduler/dequeued': 5,
+ 'scheduler/dequeued/memory': 5,
+ 'scheduler/enqueued': 5,
+ 'scheduler/enqueued/memory': 5,
+ 'start_time': datetime.datetime(2020, 4, 19, 16, 16, 39, 190077)}
+2020-04-20 00:16:40 [scrapy.core.engine] INFO: Spider closed (finished)

@@ -30,9 +30,6 @@ class xskkc(Spider):
             'isautologin': '0'
         }
         cookies = {
-            # "ASP.NET_SessionId":"canujsnuqlojigcquf2fg4pl",
-            # '__RequestVerificationToken':'KrdCc8ISStfgpgOLHEmLNaWJglvkX_uZJEhewOPjAEZuW2uWIsmtTUzppfBVwE_T_UK_AsB6M6KsIbjsypIbn_M0lIC5wWUfBwDOcTXXcZs1',
-            # 'learun_login_error':'Overdue',
         }
         headers = {
             'Accept': 'application/json, text/javascript, */*; q=0.01',

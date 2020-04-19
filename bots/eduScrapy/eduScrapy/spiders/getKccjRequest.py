@@ -117,6 +117,7 @@ class kccj(Spider):
             Item['ClassAttribute'] = td.xpath('td[6]/text()').get()
             Item['TestTime'] = td.xpath('td[7]/text()').get()
             Item['Credit'] = td.xpath('td[8]/text()').get()
+            print(Item)
             yield Item
 
 

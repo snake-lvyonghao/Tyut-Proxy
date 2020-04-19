@@ -1,0 +1,475 @@
+2020-04-20 00:18:44 [scrapy.utils.log] INFO: Scrapy 2.0.1 started (bot: eduScrapy)
+2020-04-20 00:18:44 [scrapy.utils.log] INFO: Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 20.3.0, Python 3.7.3 (default, Mar 27 2019, 09:23:15) - [Clang 10.0.1 (clang-1001.0.46.3)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.9, Platform Darwin-19.0.0-x86_64-i386-64bit
+2020-04-20 00:18:44 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2020-04-20 00:18:44 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'eduScrapy',
+ 'LOG_FILE': 'logs/eduScrapy/kccj/6e5e1998825911eaa44aacde48001122.log',
+ 'NEWSPIDER_MODULE': 'eduScrapy.spiders',
+ 'SPIDER_MODULES': ['eduScrapy.spiders']}
+2020-04-20 00:18:44 [scrapy.extensions.telnet] INFO: Telnet Password: 2f29751cd55aafbf
+2020-04-20 00:18:44 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-20 00:18:44 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-20 00:18:44 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-20 00:18:44 [scrapy.middleware] INFO: Enabled item pipelines:
+['eduScrapy.pipelines.EduscrapyPipeline']
+2020-04-20 00:18:44 [scrapy.core.engine] INFO: Spider opened
+2020-04-20 00:18:44 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-20 00:18:44 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-20 00:18:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://202.207.247.49> (referer: None)
+2020-04-20 00:18:44 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://202.207.247.49/Login/CheckLogin> (referer: http://202.207.247.49/Login/Index)
+2020-04-20 00:18:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://202.207.247.49/Home/Default> (referer: http://202.207.247.49/Login/Index)
+2020-04-20 00:18:45 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult> (referer: http://202.207.247.49/Tschedule/C6Cjgl/KccjIndex)
+2020-04-20 00:18:45 [asyncio] DEBUG: Using selector: KqueueSelector
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00003993',
+ 'ClassName': '思想政治理论综合实践课(二)',
+ 'Credit': '87',
+ 'GPA': '1',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20200106'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00003998',
+ 'ClassName': '毛泽东思想和中国特色社会主义理论体系概论(二)  ',
+ 'Credit': '80',
+ 'GPA': '2',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20200106'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '学科必修',
+ 'ClassId': '00008474',
+ 'ClassName': '操作系统R',
+ 'Credit': '78',
+ 'GPA': '3.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20200106'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '学科必修',
+ 'ClassId': '00008475',
+ 'ClassName': '计算机网络R',
+ 'Credit': '61',
+ 'GPA': '3.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20200106'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '学科选修',
+ 'ClassId': '00008476',
+ 'ClassName': '大型数据库系统R',
+ 'Credit': '79',
+ 'GPA': '2.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20200106'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '学科选修',
+ 'ClassId': '00008482',
+ 'ClassName': 'Web程序设计基础R',
+ 'Credit': '69',
+ 'GPA': '2.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20200106'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '专业必修',
+ 'ClassId': '00008486',
+ 'ClassName': '系统分析与设计R',
+ 'Credit': '76',
+ 'GPA': '3',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20200106'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '专业选修',
+ 'ClassId': '00008489',
+ 'ClassName': 'Web系统与技术R',
+ 'Credit': '90',
+ 'GPA': '3',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20200106'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '专业选修',
+ 'ClassId': '00008490',
+ 'ClassName': '软件测试技术R',
+ 'Credit': '68',
+ 'GPA': '2.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20200106'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '实践环节',
+ 'ClassId': 'SJ001579',
+ 'ClassName': '软件系统课程设计',
+ 'Credit': '87',
+ 'GPA': '2',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20200106'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00000013',
+ 'ClassName': '大学英语(三)',
+ 'Credit': '60',
+ 'GPA': '3.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190313'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00000014',
+ 'ClassName': '大学英语(四)',
+ 'Credit': '75',
+ 'GPA': '3.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00003345',
+ 'ClassName': '概率论与数理统计E',
+ 'Credit': '66',
+ 'GPA': '3',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190313'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '任选',
+ 'ClassId': '00003992',
+ 'ClassName': '思想政治理论综合实践课(一)',
+ 'Credit': '83',
+ 'GPA': '1',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00003997',
+ 'ClassName': '毛泽东思想和中国特色社会主义理论体系概论(一)  ',
+ 'Credit': '80',
+ 'GPA': '2',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00007004',
+ 'ClassName': '体育(四)',
+ 'Credit': '85',
+ 'GPA': '1',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '学科选修',
+ 'ClassId': '00008480',
+ 'ClassName': '算法设计与分析R',
+ 'Credit': '72',
+ 'GPA': '3',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '专业必修',
+ 'ClassId': '00008485',
+ 'ClassName': '软件工程导论R',
+ 'Credit': '64',
+ 'GPA': '3.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '专业必修',
+ 'ClassId': '00008487',
+ 'ClassName': '数据库系统原理R',
+ 'Credit': '74',
+ 'GPA': '3',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '专业选修',
+ 'ClassId': '00008488',
+ 'ClassName': '软件工程专业外语R',
+ 'Credit': '72',
+ 'GPA': '2',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '学科必修',
+ 'ClassId': '00008512',
+ 'ClassName': '硬件技术基础R',
+ 'Credit': '71',
+ 'GPA': '3.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00008515',
+ 'ClassName': '计算机数值方法R',
+ 'Credit': '61',
+ 'GPA': '2',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '任选',
+ 'ClassId': 'H0000409',
+ 'ClassName': '宏观经济学',
+ 'Credit': '98',
+ 'GPA': '4',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '实践环节',
+ 'ClassId': 'SJ000042',
+ 'ClassName': '程序设计课程设计',
+ 'Credit': '92',
+ 'GPA': '2',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190701'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00000013',
+ 'ClassName': '大学英语(三)',
+ 'Credit': '55',
+ 'GPA': '3.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00000048',
+ 'ClassName': '物理实验B',
+ 'Credit': '82',
+ 'GPA': '2',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00003345',
+ 'ClassName': '概率论与数理统计E',
+ 'Credit': '51',
+ 'GPA': '3',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00003554',
+ 'ClassName': '高等数学E(二)',
+ 'Credit': '73',
+ 'GPA': '5.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180921'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00007003',
+ 'ClassName': '体育(三)',
+ 'Credit': '80',
+ 'GPA': '1',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00007006',
+ 'ClassName': '马克思主义基本原理',
+ 'Credit': '68',
+ 'GPA': '3',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00007732',
+ 'ClassName': '离散结构R',
+ 'Credit': '61',
+ 'GPA': '3.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '学科必修',
+ 'ClassId': '00008472',
+ 'ClassName': '数据结构R',
+ 'Credit': '71',
+ 'GPA': '4',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '学科选修',
+ 'ClassId': '00008477',
+ 'ClassName': '电路与电子技术R',
+ 'Credit': '65',
+ 'GPA': '3',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '学科选修',
+ 'ClassId': '00008483',
+ 'ClassName': 'Java语言程序设计R',
+ 'Credit': '73',
+ 'GPA': '2.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '任选',
+ 'ClassId': 'B0000103',
+ 'ClassName': '从爱因斯坦到霍金的宇宙',
+ 'Credit': '96.49',
+ 'GPA': '2',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '实践环节',
+ 'ClassId': 'SJ000031',
+ 'ClassName': '软件工程生产实习',
+ 'Credit': '80',
+ 'GPA': '1',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20190114'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00000004',
+ 'ClassName': '中国近现代史纲要',
+ 'Credit': '67',
+ 'GPA': '2',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180702'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识任选',
+ 'ClassId': '00000012',
+ 'ClassName': '大学英语(二)',
+ 'Credit': '74',
+ 'GPA': '3.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180702'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00000042',
+ 'ClassName': '大学物理B',
+ 'Credit': '65',
+ 'GPA': '4.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180702'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00003346',
+ 'ClassName': '线性代数E',
+ 'Credit': '70',
+ 'GPA': '2.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180702'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00003554',
+ 'ClassName': '高等数学E(二)',
+ 'Credit': '51',
+ 'GPA': '5.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180702'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00007002',
+ 'ClassName': '体育(二)',
+ 'Credit': '85',
+ 'GPA': '1',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180702'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '学科选修',
+ 'ClassId': '00008479',
+ 'ClassName': '面向对象程序设计基础R',
+ 'Credit': '73',
+ 'GPA': '2.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180702'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '实践环节',
+ 'ClassId': 'SJ000009',
+ 'ClassName': '软件工程教学实习',
+ 'Credit': '67',
+ 'GPA': '1',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180702'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00000131',
+ 'ClassName': '军事理论',
+ 'Credit': '75',
+ 'GPA': '2',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180115'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00003553',
+ 'ClassName': '高等数学E(一)',
+ 'Credit': '66',
+ 'GPA': '5.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180115'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00007001',
+ 'ClassName': '体育(一)',
+ 'Credit': '94',
+ 'GPA': '1',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180115'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00007005',
+ 'ClassName': '思想道德修养与法律基础',
+ 'Credit': '78',
+ 'GPA': '3',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180115'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00007129',
+ 'ClassName': '程序设计技术R',
+ 'Credit': '90',
+ 'GPA': '3.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180115'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '通识必修',
+ 'ClassId': '00008514',
+ 'ClassName': '计算机基础R',
+ 'Credit': '70',
+ 'GPA': '2.5',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180115'}
+2020-04-20 00:18:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult>
+{'ClassAttribute': '实践环节',
+ 'ClassId': 'SJ000002',
+ 'ClassName': '军训',
+ 'Credit': '75',
+ 'GPA': '3',
+ 'Kid': <Student: Student object (8)>,
+ 'TestTime': '20180115'}
+2020-04-20 00:18:45 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-04-20 00:18:45 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2300,
+ 'downloader/request_count': 4,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/request_method_count/POST': 2,
+ 'downloader/response_bytes': 11054,
+ 'downloader/response_count': 4,
+ 'downloader/response_status_count/200': 4,
+ 'elapsed_time_seconds': 1.587266,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 19, 16, 18, 45, 827342),
+ 'item_scraped_count': 51,
+ 'log_count/DEBUG': 56,
+ 'log_count/INFO': 10,
+ 'memusage/max': 66891776,
+ 'memusage/startup': 66891776,
+ 'request_depth_max': 3,
+ 'response_received_count': 4,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2020, 4, 19, 16, 18, 44, 240076)}
+2020-04-20 00:18:45 [scrapy.core.engine] INFO: Spider closed (finished)

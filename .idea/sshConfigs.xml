@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="203.195.217.147" id="e19a0327-82c9-4cdb-849a-c9054d36ea2d" keyPath="$USER_HOME$/Downloads/mac" port="22" nameFormat="DESCRIPTIVE" username="root" />
+    </configs>
+  </component>
+</project>

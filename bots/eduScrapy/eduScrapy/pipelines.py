@@ -13,13 +13,14 @@ class EduscrapyPipeline(object):
         if isinstance(item, PersonalInformationItem):
             # 更新或创建个人信息
             P = PersonalInformation.objects.filter(ClassId=item['ClassId'])
-            P.update_or_create(defaults={'ComInPraCre': item['ComInPraCre']}, **item)
+            P.delete()
+            item.save()
             return item
         if isinstance(item, kcbItem):
-            K = Kcb.objects.filter(Kid=item['Kid'])
-            K.update_or_create(defaults={'KcbMessage': item['KcbMessage']}, **item)
+            K = Kcb.objects.filter(Kid=item['Kid']).delete()
+            item.save()
             return item
         if isinstance(item, KccjItem):
-            K = Kccj.objects.filter(Kid=item['Kid'])
-            K.update_or_create(defaults={'ClassId': item['ClassId']}, **item)
+            K = Kccj.objects.filter(Kid=item['Kid'],ClassId=item['ClassId']).delete()
+            item.save()
             return item
