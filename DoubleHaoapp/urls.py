@@ -13,4 +13,5 @@ urlpatterns = [
     # JWT认证
     path("login",views.Scrapy_login), # 登陆
     path('logout', views.Scrapy_logout), # 登出
+    path('updatabase', views.update_datebase), # 更新数据库
 ]

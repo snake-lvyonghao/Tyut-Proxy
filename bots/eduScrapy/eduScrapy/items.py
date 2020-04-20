@@ -8,7 +8,7 @@
 import scrapy
 from scrapy_djangoitem import DjangoItem
 
-from DoubleHaoapp.models import PersonalInformation, Kcb, Kccj
+from DoubleHaoapp.models import PersonalInformation, Kcb, Kccj, Student
 
 
 class PersonalInformationItem(DjangoItem):
@@ -19,3 +19,6 @@ class KccjItem(DjangoItem):
 
 class kcbItem(DjangoItem):
     django_model = Kcb
+
+class studentItem(DjangoItem):
+    django_model = Student

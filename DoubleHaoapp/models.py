@@ -1,28 +1,31 @@
 import datetime
 from datetime import timedelta
 
-import jwt
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
 # Create your models here.
+import jwt
+
 from DoubleHao import settings
 
 
 class Student(models.Model):
     Sid = models.IntegerField(unique=True)
     Spassword = models.IntegerField()
+    Stype = models.CharField(max_length=10)
 
     def __toString__(self):
-        result = {"id": self.Sid, "password": self.Spassword}
+        result = {"id": self.Sid, "password": self.Spassword,"type":self.Stype}
         return result
 
     @classmethod
-    def createStudent(cls, Sid, Spassword):
+    def createStudent(cls, Sid, Spassword,Stype):
         stu = cls(
             Sid=Sid,
             Spassword=Spassword,
+            Stype=Stype,
         )
         return stu
 

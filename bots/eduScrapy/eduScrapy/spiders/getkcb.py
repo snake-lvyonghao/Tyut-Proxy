@@ -30,7 +30,6 @@ class jwxt(Spider):
     def login_parse(self, response):
         publickey = response.xpath("/html/body/div[2]/@data-val").extract()[0]
         url = "http://202.207.247.49/Login/CheckLogin"
-        # username = self.crack_pwd(publickey, '2017006353')
         username = Tool.crack_pwd(publickey, self.username)
         formatdata = {
             'username': username,

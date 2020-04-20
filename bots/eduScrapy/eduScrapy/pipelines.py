@@ -4,8 +4,8 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-from DoubleHaoapp.models import PersonalInformation, Kcb, Kccj
-from bots.eduScrapy.eduScrapy.items import kcbItem, KccjItem, PersonalInformationItem
+from DoubleHaoapp.models import PersonalInformation, Kcb, Kccj, Student
+from bots.eduScrapy.eduScrapy.items import kcbItem, KccjItem, PersonalInformationItem, studentItem
 
 
 class EduscrapyPipeline(object):
@@ -22,5 +22,9 @@ class EduscrapyPipeline(object):
             return item
         if isinstance(item, KccjItem):
             K = Kccj.objects.filter(Kid=item['Kid'],ClassId=item['ClassId']).delete()
+            item.save()
+            return item
+        if isinstance(item,studentItem):
+            S = Student.objects.filter(Sid=item['Sid']).delete()
             item.save()
             return item
