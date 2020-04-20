@@ -1,8 +1,20 @@
 [![JMrPc4.md.png](https://s1.ax1x.com/2020/04/20/JMrPc4.md.png)](https://imgchr.com/i/JMrPc4)
 ---
 ![](https://img.shields.io/badge/language-Python-orange.svg) ![](https://img.shields.io/badge/license-MIT-000000.svg) ![](https://img.shields.io/badge/version-1.1.0-yellow) [![GitHub stars](https://img.shields.io/github/stars/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/stargazers) [![GitHub issues](https://img.shields.io/github/issues/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/issues) 
-## 版本1.1.0更新 
-这次是比较大的更新，更新主要内容有
+## 版本1.1.2更新 2020-4-20
+本次对项目做了进一步的优化，更新主要内容更有：
++ 移除项目Scrapy中测试用的Spider_request爬虫，新增校验账号Spider
++ Django Student模型增添Stype字段 用于表明用户账号密码是否能通过校园网验证
++ 重构Djangp所有接口，具体内容：
+    + 重构注册接口，采用先验证再注册的方式
+    + 重构三大功能接口（课程表，课程成绩，个人信息），都采用直接访问数据库的方式
+    + 新增updatabase接口，用于对数据库中所有信息进行更新，默认管理员账号有权限，若多人使用请自行编写新的模型
++ 对返回课程表的格式进行了一点小小的改动，能够正常的返回一节课占三节小课的情况
+建议 ：如果服务部署在服务器，则需要每天更新数据库，保证数据库内容与学校教务处保持一致，推荐使用crontab来自动执行命令
+我的笨办法：拿到管理员的token，每天去请求一次更新数据库：
+`curl -H "Content-Type:application/json" -X POST --data '{"token":"管理员的token"}' http://127.0.0.1:8000/jwxt/updatabase`
+## 版本1.1.0更新 2020-4-19
+这次是比较大的更新，更新主要内容有：
 + 移除了Django中业务的Session功能。
 + 替换Session，使用token来加密传输数据。
 + 修复数据库更新bug，目前采用删除原数据在插入新数据的方式，性能上并不理想后续还会再升级。
@@ -13,6 +25,7 @@
 
 当前存在的问题:当前用户每次登陆都需要重新爬取数据，数据返回的小于爬虫运行的时间，没有实现同步，经常需要等一段时间再刷新才能拿到更新的数据。
 未来改进方向:用户查询数据接口只走数据库，不再启动爬虫，设置定时爬虫，在每天特定时段对整个数据库进行更新。
+
 # Tyut教务处信息代理 + 聚合
 
 本项目是为了方便校园你我他，免去大家查GPA，看课表，看考试成绩之苦。
