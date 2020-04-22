@@ -309,3 +309,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+bots/eduScrapy/logs/
+bots/eduScrapy/eggs/
+/bots/eduScrapy/build/
