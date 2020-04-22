@@ -139,7 +139,7 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
+./.idea
 .idea/.gitignore
 .idea/DoubleHao.iml
 .idea/dataSources.xml
