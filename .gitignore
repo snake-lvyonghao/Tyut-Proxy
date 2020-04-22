@@ -2,3 +2,6 @@
 /venv/
 /.idea/
 /bots/eduScrapy/logs/
+/DoubleHaoapp/
+/.idea/
+/DoubleHaoapp/views_bak.py
