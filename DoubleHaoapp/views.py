@@ -99,17 +99,21 @@ def Scrapy_update(request):
 # 登陆 返回token
 def Scrapy_login(request):
     request = json.loads(request.body)
-    stu = Student.objects.get(Sid=request['username'])
-    if stu.Spassword == int(request['password']):
-        token = stu.token
-        result = {"state": '200', "message": "登陆成功", "token": token}
-        result = json.dumps(result, ensure_ascii=False)
-        return HttpResponse(result, content_type='application/json,charset=utf-8')
-    else:
-        result = {"state": '400', "message": "账号密码不匹配"}
+    try:
+        stu = Student.objects.get(Sid=request['username'])
+        if stu.Spassword == int(request['password']):
+            token = stu.token
+            result = {"state": '200', "message": "登陆成功", "token": token}
+            result = json.dumps(result, ensure_ascii=False)
+            return HttpResponse(result, content_type='application/json,charset=utf-8')
+        else:
+            result = {"state": '400', "message": "账号密码不匹配"}
+            result = json.dumps(result, ensure_ascii=False)
+            return HttpResponse(result, content_type="application/json,charset=utf-8")
+    except:
+        result = {"state": '400', "message": "账号不存在"}
         result = json.dumps(result, ensure_ascii=False)
         return HttpResponse(result, content_type="application/json,charset=utf-8")
-
 
 # 登出
 def Scrapy_logout(request):
@@ -156,10 +160,13 @@ def Scrapy_Kcb(request):
         return HttpResponse(result, content_type="application/json,charset=utf-8")
     try:
         # token中取得usernam
-        token = jwt.decode(request["token"], settings.SECRET_KEY, algorithm='HS256')
+        token = jwt.decode(request["token"],settings.SECRET_KEY, algorithm='HS256')
         username = token.get("username")
-        kcb = Kcb.objects.get(Kid__Sid=username)
-        result = {"state": '200', "message": get_course(kcb.KcbMessage)}
+        kcb = Kcb.objects.get(Kid_id=username)
+        week = None
+        if 'week' in request :
+            week = request['week']
+        result = {"state": '200', "message": get_course(data=kcb.KcbMessage,week=week - 1)}
         result = json.dumps(result, ensure_ascii=False)
         return HttpResponse(result, content_type="application/json,charset=utf-8")
     except:

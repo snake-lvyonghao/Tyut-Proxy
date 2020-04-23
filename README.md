@@ -1,6 +1,11 @@
 [![JMrPc4.md.png](https://s1.ax1x.com/2020/04/20/JMrPc4.md.png)](https://imgchr.com/i/JMrPc4)
 ---
 ![](https://img.shields.io/badge/language-Python-orange.svg) ![](https://img.shields.io/badge/license-MIT-000000.svg) ![](https://img.shields.io/badge/version-1.1.0-yellow) [![GitHub stars](https://img.shields.io/github/stars/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/stargazers) [![GitHub issues](https://img.shields.io/github/issues/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/issues) 
+## 版本1.1.4更新 2020-4-24
+本次更新修复一个bug:课程表上课时间字段为"1-5，7-11周"时出现无法解析的情况，并采用了新的解析方式解析字段
+添加了新的库，解决前后端分离开发时跨域请求的问题
++ django-cors-headers==3.2.1
+如果你想使用最近版本的项目请在命令行中执行：`pip install -r requirments.txt`,每次版本更新后的项目所有库我都会放在requirments.txt中，直接自己安装就好了。
 ## 版本1.1.2更新 2020-4-20
 本次对项目做了进一步的优化，更新主要内容更有：
 + 移除项目Scrapy中测试用的Spider_request爬虫，新增校验账号Spider
@@ -52,6 +57,8 @@ Django用于做后端开发，用于封装核心API为日后开发提供接口
 + PyMySQL           
 + scrapy-djangoitem 1.1.1   
 
+如何一次性安装依赖？
+你可以在项目的虚拟Python环境下使用命令`pip install -r requirments.txt`，它会自动帮你安装本项目所有的库
 ## run
 
 怎么把项目跑起来，这个是个很大的问题

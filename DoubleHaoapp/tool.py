@@ -1,12 +1,20 @@
 import json
+import re
+import string
 from datetime import datetime
 
 
-def get_course(data):
+def get_course(data, week=None):
     start_date = datetime(2020, 2, 17)
     now_date = datetime.today()
-    week = int(start_date.__rsub__(now_date).days / 7 + 1)
-    result = {}
+    if week is None:
+        week = int(start_date.__rsub__(now_date).days / 7 + 1)
+    # 初始化课程表
+    result = {'week': []}
+    for i in range(1,19):
+        result['week'].append(0)
+    result['week'][week] = 1
+
     for i in range(1, 8):
         result[str(i)] = {}
     x = json.loads(data)
@@ -25,8 +33,11 @@ def get_course(data):
         res = course_detail(i)
         if res[-1] == 0:
             continue
-        start = int(res[1][0])
-        end = int(res[1][2:].replace('周', ''))
-        if start <= week <= end:
-            result[str(res[-1])][res[-2]] = res
+        weeks = re.findall(r"\d+\.?\d*",res[1])
+        for i in range(0,len(weeks),2):
+            start = int(weeks[i])
+            end = int(weeks[i + 1])
+            print(start,end)
+            if start <= week + 1 <= end:
+                result[str(res[-1])][res[-2]] = res
     return result

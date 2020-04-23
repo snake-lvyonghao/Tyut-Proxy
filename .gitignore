@@ -312,3 +312,5 @@ cython_debug/
 bots/eduScrapy/logs/
 bots/eduScrapy/eggs/
 /bots/eduScrapy/build/
+dbs/
+twistd.pid
