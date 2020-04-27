@@ -9,11 +9,9 @@ def get_course(data, week=None):
     now_date = datetime.today()
     if week is None:
         week = int(start_date.__rsub__(now_date).days / 7 + 1)
+    week = week - 1
     # 初始化课程表
-    result = {'week': []}
-    for i in range(1,19):
-        result['week'].append(0)
-    result['week'][week] = 1
+    result = {}
 
     for i in range(1, 8):
         result[str(i)] = {}

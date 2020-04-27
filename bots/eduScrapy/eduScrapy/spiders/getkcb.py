@@ -15,6 +15,13 @@ from bots.eduScrapy.eduScrapy.items import kcbItem
 class jwxt(Spider):
     name = "kcb"
 
+    # 指定pipline
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'eduScrapy.pipelines.EduscrapyPipeline': 300
+        }
+    }
+
     def __init__(self, username=None, password=None, *args, **kwargs):
         super(jwxt, self).__init__(*args, **kwargs)
         self.username = username

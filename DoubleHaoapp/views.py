@@ -8,8 +8,9 @@ from django.shortcuts import render
 
 # Create your views here.
 from DoubleHao import settings
-from DoubleHaoapp.models import Student, PersonalInformation, Kcb, Kccj
+from DoubleHaoapp.models import Student, PersonalInformation, Kcb, Kccj, Card
 from DoubleHaoapp.tool import get_course
+from bots.eduScrapy.eduScrapy.spiders.getCustome import CustomeSpider
 
 
 def index(request):
@@ -115,6 +116,7 @@ def Scrapy_login(request):
         result = json.dumps(result, ensure_ascii=False)
         return HttpResponse(result, content_type="application/json,charset=utf-8")
 
+
 # 登出
 def Scrapy_logout(request):
     request = json.loads(request.body)
@@ -160,13 +162,13 @@ def Scrapy_Kcb(request):
         return HttpResponse(result, content_type="application/json,charset=utf-8")
     try:
         # token中取得usernam
-        token = jwt.decode(request["token"],settings.SECRET_KEY, algorithm='HS256')
+        token = jwt.decode(request["token"], settings.SECRET_KEY, algorithm='HS256')
         username = token.get("username")
         kcb = Kcb.objects.get(Kid_id=username)
         week = None
-        if 'week' in request :
+        if 'week' in request:
             week = request['week']
-        result = {"state": '200', "message": get_course(data=kcb.KcbMessage,week=week - 1)}
+        result = {"state": '200', "message": get_course(data=kcb.KcbMessage, week=week)}
         result = json.dumps(result, ensure_ascii=False)
         return HttpResponse(result, content_type="application/json,charset=utf-8")
     except:
@@ -229,3 +231,49 @@ def update_datebase(request):
     result = {"state": '200', "message": "update successed"}
     result = json.dumps(result, ensure_ascii=False)
     return HttpResponse(result, content_type="application/json,charset=utf-8")
+
+
+# 获取一卡通余额
+def getamoount(request):
+    request = json.loads(request.body)
+    username = request['username']
+    password = request['password']
+    try:
+        # 使用爬虫进行校验用户数据
+        url = 'http://localhost:6800/schedule.json'
+        data = {'project': 'eduScrapy', 'spider': 'amount', 'username': username, 'password': password}
+        requests.post(url=url, data=data)
+        # 等待Scrapy得到数据
+        time.sleep(5)
+        card = Card.objects.get(Cid=username)
+        result = {"state": "200", "message": {'amount':card.amount}}
+        result = json.dumps(result, ensure_ascii=False)
+        return HttpResponse(result, content_type="application/json,charset=utf-8")
+    except:
+        result = {"state": "400", "message": "用户名密码错误，请输入校园卡正确的账号和密码"}
+        result = json.dumps(result, ensure_ascii=False)
+        return HttpResponse(result, content_type="application/json,charset=utf-8")
+
+# 获取一卡通详细账单
+def getCustome(request):
+    request = json.loads(request.body)
+    username = request['username']
+    password = request['password']
+    startDate = request['startDate']
+    endDate = request['endDate']
+    try:
+        # 使用爬虫进行校验用户数据
+        url = 'http://localhost:6800/schedule.json'
+        data = {'project': 'eduScrapy', 'spider': 'custome', 'username': username, 'password': password,'startDate':startDate,'endDate':endDate}
+        requests.post(url=url, data=data)
+        # 等待Scrapy得到数据
+        time.sleep(5)
+        card = Card.objects.get(Cid=username)
+        result = {"state": "200", "message": card.consume}
+        result = json.dumps(result, ensure_ascii=False)
+        return HttpResponse(result, content_type="application/json,charset=utf-8")
+    except:
+        result = {"state": "400", "message": "用户名密码错误，请输入校园卡正确的账号和密码"}
+        result = json.dumps(result, ensure_ascii=False)
+        return HttpResponse(result, content_type="application/json,charset=utf-8")
+

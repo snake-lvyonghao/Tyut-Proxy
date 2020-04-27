@@ -11,6 +11,13 @@ from bots.eduScrapy.eduScrapy.items import studentItem
 class Landingcheck(Spider):
     name = "Landingcheck"
 
+    # 指定pipline
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'eduScrapy.pipelines.EduscrapyPipeline': 300
+        }
+    }
+
     def __init__(self, username=None, password=None, *args, **kwargs):
         super(Landingcheck, self).__init__(*args, **kwargs)
         self.username = username

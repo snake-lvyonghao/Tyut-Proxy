@@ -76,6 +76,8 @@ COOKIES_ENABLED = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+   'eduScrapy.pipelines.consumePipline': 300,
+   'eduScrapy.pipelines.amountPipline': 300,
    'eduScrapy.pipelines.EduscrapyPipeline': 300,
 }
 

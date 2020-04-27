@@ -1,12 +1,14 @@
 asgiref==3.2.7
 attrs==19.3.0
 Automat==20.2.0
+baidu-aip==2.2.18.0
 certifi==2020.4.5.1
 cffi==1.14.0
 chardet==3.0.4
 constantly==15.1.0
 cryptography==2.9
 cssselect==1.1.0
+Cython==0.29.16
 Django==3.0.5
 django-cors-headers==3.2.1
 hyperlink==19.0.0

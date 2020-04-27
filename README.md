@@ -1,6 +1,13 @@
 [![JMrPc4.md.png](https://s1.ax1x.com/2020/04/20/JMrPc4.md.png)](https://imgchr.com/i/JMrPc4)
 ---
-![](https://img.shields.io/badge/language-Python-orange.svg) ![](https://img.shields.io/badge/license-MIT-000000.svg) ![](https://img.shields.io/badge/version-1.1.0-yellow) [![GitHub stars](https://img.shields.io/github/stars/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/stargazers) [![GitHub issues](https://img.shields.io/github/issues/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/issues) 
+![](https://img.shields.io/badge/language-Python-orange.svg) ![](https://img.shields.io/badge/license-MIT-000000.svg) ![](https://img.shields.io/badge/version-1.1.5-yellow) [![GitHub stars](https://img.shields.io/github/stars/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/stargazers) [![GitHub issues](https://img.shields.io/github/issues/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/issues) 
+## 版本1.1.5更新 2020-4-28
+本次是比较大的更新，更新主要内容有：
++ 给不同的爬虫设置不同的pipline
++ 新增校园卡信息查询爬虫
++ 新增校园卡余额，校园卡明细两个接口
+在校园卡查询的爬虫需要解决验证码的问题，如果使用open-cv还需要在本地安装，就会很麻烦，这里我选择使用百度云的API，每天可以使用50000次，足够用了。
+新加包百度API baidu-aip==2.2.18.0 
 ## 版本1.1.4更新 2020-4-24
 本次更新修复一个bug:课程表上课时间字段为"1-5，7-11周"时出现无法解析的情况，并采用了新的解析方式解析字段
 添加了新的库，解决前后端分离开发时跨域请求的问题

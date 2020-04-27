@@ -8,6 +8,13 @@ from bots.eduScrapy.eduScrapy.items import KccjItem
 class kccj(Spider):
     name = "kccj"
 
+    # 指定pipline
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'eduScrapy.pipelines.EduscrapyPipeline': 300
+        }
+    }
+
     def __init__(self, username=None, password=None, *args, **kwargs):
         super(kccj, self).__init__(*args, **kwargs)
         self.username = username
@@ -78,7 +85,7 @@ class kccj(Spider):
             # 登陆失败相应处理
             pass
 
-    def getkkcj(self,response):
+    def getkkcj(self, response):
         url = 'http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult'
         Cookie = response.request.headers.getlist('Cookie')
         cookies = {}
@@ -98,9 +105,9 @@ class kccj(Spider):
             'Connection': 'keep-alive',
         }
         formdata = {
-            'order':'zxjxjhh desc,kch'
+            'order': 'zxjxjhh desc,kch'
         }
-        yield FormRequest(url=url, cookies=cookies, callback=self.parse, method="POST",formdata=formdata,
+        yield FormRequest(url=url, cookies=cookies, callback=self.parse, method="POST", formdata=formdata,
                           headers=headers)
 
     def parse(self, response):
@@ -119,5 +126,3 @@ class kccj(Spider):
             Item['Credit'] = td.xpath('td[8]/text()').get()
             print(Item)
             yield Item
-
-

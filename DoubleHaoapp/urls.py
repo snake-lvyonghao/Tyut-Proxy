@@ -14,4 +14,6 @@ urlpatterns = [
     path("login",views.Scrapy_login), # 登陆
     path('logout', views.Scrapy_logout), # 登出
     path('updatabase', views.update_datebase), # 更新数据库
+    path('getcustome', views.getCustome), # 校园卡消费信息
+    path('getammount', views.getamoount), # 校园卡余额
 ]

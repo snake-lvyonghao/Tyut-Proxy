@@ -8,6 +8,13 @@ from bots.eduScrapy.eduScrapy.items import PersonalInformationItem
 class xskkc(Spider):
     name = "pi"
 
+    # 指定pipline
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'eduScrapy.pipelines.EduscrapyPipeline': 300
+        }
+    }
+
     def __init__(self, username=None, password=None, *args, **kwargs):
         super(xskkc, self).__init__(*args, **kwargs)
         self.username = username
@@ -99,7 +106,8 @@ class xskkc(Spider):
 
     def parse(self, response):
         item = PersonalInformationItem()
-        item['ClassId'] = Student.objects.get(Sid=response.xpath('/html/body/div[1]/div/div[1]/div[2]/span/text()').extract()[0])
+        item['ClassId'] = Student.objects.get(
+            Sid=response.xpath('/html/body/div[1]/div/div[1]/div[2]/span/text()').extract()[0])
         item['Class'] = response.xpath('/html/body/div[1]/div/div[2]/div[2]/span/text()').extract()[0]
         item['Coct'] = response.xpath('/html/body/div[1]/div/div[3]/div[2]/span/text()').extract()[0]
         item['Gpa'] = response.xpath('/html/body/div[1]/div/div[4]/div[2]/span/text()').extract()[0]
