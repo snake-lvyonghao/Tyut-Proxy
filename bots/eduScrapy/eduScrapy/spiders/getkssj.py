@@ -1,12 +1,19 @@
-from scrapy import Spider, Request, FormRequest, cmdline
+import json
+import base64
+import scrapy
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_v1_5 as Cipher_pkcs1_v1_5
+
+from scrapy import Spider, Request, cmdline, FormRequest, Item
+from scrapy.http import Request, FormRequest
 
 from DoubleHaoapp.models import Student
 from bots.eduScrapy.eduScrapy import Tool
-from bots.eduScrapy.eduScrapy.items import KccjItem
+from bots.eduScrapy.eduScrapy.items import kcbItem, kssjItem
 
 
-class KccjSpider(Spider):
-    name = "kccj"
+class KssjSpider(Spider):
+    name = "kssj"
 
     # 指定pipline
     custom_settings = {
@@ -16,14 +23,13 @@ class KccjSpider(Spider):
     }
 
     def __init__(self, username=None, password=None, *args, **kwargs):
-        super(KccjSpider, self).__init__(*args, **kwargs)
+        super(KssjSpider, self).__init__(*args, **kwargs)
         self.username = username
         self.password = password
 
     # 首先拿到RSA的publickey
     def start_requests(self):
         # 设置请求校园网网址
-
         url = "http://202.207.247.49"
         yield Request(url, self.login_parse)
 
@@ -38,9 +44,6 @@ class KccjSpider(Spider):
             'isautologin': '0'
         }
         cookies = {
-            # "ASP.NET_SessionId":"canujsnuqlojigcquf2fg4pl",
-            # '__RequestVerificationToken':'KrdCc8ISStfgpgOLHEmLNaWJglvkX_uZJEhewOPjAEZuW2uWIsmtTUzppfBVwE_T_UK_AsB6M6KsIbjsypIbn_M0lIC5wWUfBwDOcTXXcZs1',
-            # 'learun_login_error':'Overdue',
         }
         headers = {
             'Accept': 'application/json, text/javascript, */*; q=0.01',
@@ -80,16 +83,24 @@ class KccjSpider(Spider):
                 'Origin': 'http://202.207.247.49',
                 'Connection': 'keep-alive',
             }
-            yield FormRequest(url=url, cookies=cookies, callback=self.getkkcj, method="GET", headers=headers)
+            yield FormRequest(url=url, cookies=cookies, callback=self.GeKssj, method="GET", headers=headers)
         else:
             # 登陆失败相应处理
             pass
 
-    def getkkcj(self, response):
-        url = 'http://202.207.247.49/Tschedule/C6Cjgl/GetKccjResult'
+    # 获取考试时间
+    def GeKssj(self, response):
+        url = "http://202.207.247.49/Tschedule/C5KwBkks/GetKsxxByXhListPage"
         Cookie = response.request.headers.getlist('Cookie')
         cookies = {}
-        # 便利整个cookies
+        formdata = {
+            'limit': '30',
+            'offset': '0',
+            'sort': 'ksrq',
+            'order': 'desc',
+            'conditionJson': {}
+        }
+        # 遍历整个cookies
         for cookie in Cookie:
             #  转码并对每一行用 = 分隔开，在加入到字典当中
             cookie = cookie.decode("utf-8").split('=')
@@ -100,29 +111,19 @@ class KccjSpider(Spider):
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
             'X-Requested-With': 'XMLHttpRequest',
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            'Referer': 'http://202.207.247.49/Tschedule/C6Cjgl/KccjIndex',
+            'Referer': 'http://202.207.247.49/Tschedule/C5KwBkks/SearchKssjddByXsIndex',
             'Origin': 'http://202.207.247.49',
             'Connection': 'keep-alive',
         }
-        formdata = {
-            'order': 'zxjxjhh desc,kch'
-        }
-        yield FormRequest(url=url, cookies=cookies, callback=self.parse, method="POST", formdata=formdata,
-                          headers=headers)
+        yield FormRequest(url=url, cookies=cookies, callback=self.parse, method="POST", headers=headers,
+                          formdata=formdata)
 
     def parse(self, response):
-        kccjResultList = []
-        tr = response.xpath('//tr')
-        for td in tr:
-            Item = KccjItem()
-            if td.xpath('td[1][not(@colspan)]/text()').get() == None:
-                continue
-            Item['Kid'] = Student.objects.get(Sid=self.username)
-            Item['ClassId'] = td.xpath('td[1][not(@colspan)]/text()').get()
-            Item['ClassName'] = td.xpath('td[3]/text()').get()
-            Item['GPA'] = td.xpath('td[5]/text()').get()
-            Item['ClassAttribute'] = td.xpath('td[6]/text()').get()
-            Item['TestTime'] = td.xpath('td[7]/text()').get()
-            Item['Credit'] = td.xpath('td[8]/text()').get()
-            print(Item)
-            yield Item
+        item = kssjItem()
+        # item['Kid'] = Student.objects.get(Sid=self.username)
+        # item['Kssjmessage'] = response.text
+        message = eval(response.text.replace("null", "0"))
+        message = json.dumps(message, ensure_ascii=False)
+        item['Kid'] = Student.objects.get(Sid=self.username)
+        item['Kssjmessage'] = message.__str__()
+        yield item

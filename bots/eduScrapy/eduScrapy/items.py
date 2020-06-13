@@ -7,7 +7,7 @@
 
 import scrapy
 from scrapy_djangoitem import DjangoItem
-from DoubleHaoapp.models import PersonalInformation, Kcb, Kccj, Student, Card
+from DoubleHaoapp.models import PersonalInformation, Kcb, Kccj, Student, Card, Kssj
 
 
 # 个人信息
@@ -28,6 +28,10 @@ class kcbItem(DjangoItem):
 # 学生
 class studentItem(DjangoItem):
     django_model = Student
+
+
+class kssjItem(DjangoItem):
+    django_model = Kssj
 
 
 # 单行明细

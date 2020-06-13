@@ -96,11 +96,20 @@ class Kcb(models.Model):
         return result
 
 
+class Kssj(models.Model):
+    Kid = models.ForeignKey("Student", to_field="Sid", on_delete=models.CASCADE)  # 学号
+    Kssjmessage = models.TextField()
+
+    def __toString__(self):
+        result = {'Kid': self.Kid, 'Kssjmessage': self.Kssjmessage}
+        return result
+
+
 class Card(models.Model):
     Cid = models.ForeignKey("Student", to_field="Sid", on_delete=models.CASCADE)  # 学号
     amount = models.CharField(max_length=15)  # 余额
     consume = models.TextField()  # 账户明细
 
     def __toString__(self):
-        result = {'amount': self.amount,"consume":self.consume}
+        result = {'amount': self.amount, "consume": self.consume}
         return result

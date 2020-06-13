@@ -5,7 +5,7 @@ from bots.eduScrapy.eduScrapy import Tool
 from bots.eduScrapy.eduScrapy.items import PersonalInformationItem
 
 
-class xskkc(Spider):
+class XskkcSpider(Spider):
     name = "pi"
 
     # 指定pipline
@@ -16,7 +16,7 @@ class xskkc(Spider):
     }
 
     def __init__(self, username=None, password=None, *args, **kwargs):
-        super(xskkc, self).__init__(*args, **kwargs)
+        super(XskkcSpider, self).__init__(*args, **kwargs)
         self.username = username
         self.password = password
 
@@ -118,7 +118,10 @@ class xskkc(Spider):
         item['FailingCredits'] = response.xpath('/html/body/div[1]/div/div[9]/div[2]/span/text()').extract()[0]
         item['Name'] = response.xpath('/html/body/div[2]/div/div[1]/div[2]/span/text()').extract()[0]
         item['TotalCreditsRequired'] = response.xpath('/html/body/div[2]/div/div[2]/div[2]/span/text()').extract()[0]
-        item['ComInPraCre'] = response.xpath('/html/body/div[2]/div/div[3]/div[2]/span/text()').extract()[0]
+        try:
+            item['ComInPraCre'] = response.xpath('/html/body/div[2]/div/div[3]/div[2]/span/text()').extract()[0]
+        except:
+            item['ComInPraCre'] = 0
         item['GpaSortClass'] = response.xpath('/html/body/div[2]/div/div[4]/div[2]/span/text()').extract()[0]
         item['WeightCredit'] = response.xpath('/html/body/div[2]/div/div[5]/div[2]/span/text()').extract()[0]
         item['WeightCreditSort'] = response.xpath('/html/body/div[2]/div/div[6]/div[2]/span/text()').extract()[0]

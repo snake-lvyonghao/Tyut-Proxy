@@ -8,8 +8,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from DoubleHao import settings
-from DoubleHaoapp.models import Student, PersonalInformation, Kcb, Kccj, Card
-from DoubleHaoapp.tool import get_course
+from DoubleHaoapp.models import Student, PersonalInformation, Kcb, Kccj, Card, Kssj
+from DoubleHaoapp.tool import get_course, get_kssj
 from bots.eduScrapy.eduScrapy.spiders.getCustome import CustomeSpider
 
 
@@ -46,7 +46,7 @@ def Scrapy_register(request):
             return HttpResponse(result, content_type="application/json,charset=utf-8")
         else:
             # 新用户更新数据
-            Spiderlist = ['pi', 'kcb', 'kccj']
+            Spiderlist = ['pi', 'kcb', 'kccj','kssj']
             for spider in Spiderlist:
                 data = {'project': 'eduScrapy', 'spider': spider, 'username': username, 'password': password}
                 requests.post(url=url, data=data)
@@ -175,6 +175,27 @@ def Scrapy_Kcb(request):
         result = {"state": "500", "message": "加载中请稍等并刷新，没有学生信息,请先注册"}
         return HttpResponse(json.dumps(result, ensure_ascii=False), content_type="application/json,charset=utf-8")
 
+# 获取个人考试安排
+def Scrapy_Kssj(request):
+    request = json.loads(request.body)
+    # 判断是否已经登陆
+    if "token" not in request:
+        result = {"state": '400', "message": "请先登陆"}
+        result = json.dumps(result, ensure_ascii=False)
+        return HttpResponse(result, content_type="application/json,charset=utf-8")
+    try:
+        # token中取得usernam
+        token = jwt.decode(request["token"], settings.SECRET_KEY, algorithm='HS256')
+        username = token.get("username")
+        kssj = Kssj.objects.get(Kid_id=username)
+        print(kssj.Kssjmessage)
+        result = {"state": '200', "message": get_kssj(data=kssj.Kssjmessage)}
+        result = json.dumps(result, ensure_ascii=False)
+        return HttpResponse(result, content_type="application/json,charset=utf-8")
+    except:
+        result = {"state": "500", "message": "加载中请稍等并刷新，没有学生信息,请先注册"}
+        return HttpResponse(json.dumps(result, ensure_ascii=False), content_type="application/json,charset=utf-8")
+
 
 # 获取个人成绩概况
 def Scrapy_Kccj(request):
@@ -224,7 +245,7 @@ def update_datebase(request):
         username = stu.Sid
         password = stu.Spassword
         url = 'http://localhost:6800/schedule.json'
-        Spiderlist = ['pi', 'kcb', 'kccj']
+        Spiderlist = ['pi', 'kcb', 'kccj','kssj']
         for spider in Spiderlist:
             data = {'project': 'eduScrapy', 'spider': spider, 'username': username, 'password': password}
             requests.post(url=url, data=data)

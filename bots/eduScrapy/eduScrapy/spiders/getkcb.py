@@ -12,7 +12,7 @@ from bots.eduScrapy.eduScrapy import Tool
 from bots.eduScrapy.eduScrapy.items import kcbItem
 
 
-class jwxt(Spider):
+class KcbSpider(Spider):
     name = "kcb"
 
     # 指定pipline
@@ -23,7 +23,7 @@ class jwxt(Spider):
     }
 
     def __init__(self, username=None, password=None, *args, **kwargs):
-        super(jwxt, self).__init__(*args, **kwargs)
+        super(KcbSpider, self).__init__(*args, **kwargs)
         self.username = username
         self.password = password
 

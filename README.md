@@ -1,7 +1,7 @@
 [![JMrPc4.md.png](https://s1.ax1x.com/2020/04/20/JMrPc4.md.png)](https://imgchr.com/i/JMrPc4)
 ---
 ![](https://img.shields.io/badge/language-Python-orange.svg) ![](https://img.shields.io/badge/license-MIT-000000.svg)
-![](https://img.shields.io/badge/version-1.1.5-yellow) 
+![](https://img.shields.io/badge/version-1.2。0-yellow) 
 [![GitHub stars](https://img.shields.io/github/stars/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/stargazers) 
 [![GitHub issues](https://img.shields.io/github/issues/snake-lvyonghao/Tyut-Proxy)](https://github.com/snake-lvyonghao/Tyut-Proxy/issues) 
 # 太理拾课
@@ -71,6 +71,12 @@ Django用于做后端开发，用于封装核心API为日后开发提供接口
 如果你想了解项目的细节请关注我的博客，不定期更新内容：[大道至简](https://snake-lvyonghao.github.io/)
 ---
 ## 更新
+### 版本1.2.0更新 2020-6-13
+本次主要更新内容如下：
++ 修复Spider类命名不规范
++ 增添查询考试安排的功能
++ 增添相应的Model类，Item类，数据库添了一张考试安排表
+
 ### 版本1.1.5更新 2020-4-28
 本次是比较大的更新，更新主要内容有：
 + 给不同的爬虫设置不同的pipline

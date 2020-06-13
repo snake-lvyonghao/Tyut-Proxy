@@ -6,9 +6,9 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 import json
 
-from DoubleHaoapp.models import PersonalInformation, Kcb, Kccj, Student, Card
+from DoubleHaoapp.models import PersonalInformation, Kcb, Kccj, Student, Card, Kssj
 from bots.eduScrapy.eduScrapy.items import kcbItem, KccjItem, PersonalInformationItem, studentItem, \
-    amountItem, customeItem
+    amountItem, customeItem, kssjItem
 
 
 class EduscrapyPipeline(object):
@@ -31,8 +31,12 @@ class EduscrapyPipeline(object):
             S = Student.objects.filter(Sid=item['Sid']).delete()
             item.save()
             return item
+        if isinstance(item, kssjItem):
+            K = Kssj.objects.filter(Kid=item['Kid']).delete()
+            item.save()
+            return item
 
-
+# 学生卡
 class consumePipline(object):
     def __init__(self):
         self.list = []
@@ -48,7 +52,7 @@ class consumePipline(object):
             card = Card.objects.get(Cid=spider.username)
             # 反序
             self.list.reverse()
-            card.consume = {"custome":self.list}
+            card.consume = {"custome": self.list}
             card.save()
         except:
             Cid = Student.objects.get(Sid=spider.username)
@@ -56,7 +60,7 @@ class consumePipline(object):
             card.save()
             pass
 
-
+# 学生卡
 class amountPipline(object):
     def process_item(self, item, spider):
         if isinstance(item, amountItem):
@@ -64,7 +68,7 @@ class amountPipline(object):
                 card = Card.objects.get(Cid=item['studentid'])
                 card.amount = item['amount']
                 card.save()
-            except :
+            except:
                 Cid = Student.objects.get(Sid=item['studentid'])
                 card = Card.objects.create(Cid=Cid, amount=item['amount'])
                 card.save()
